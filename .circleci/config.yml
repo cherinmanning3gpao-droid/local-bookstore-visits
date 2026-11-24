@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  list_five:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: show one to five
+          command: seq 1 5
+workflows:
+  main:
+    jobs:
+      - list_five
